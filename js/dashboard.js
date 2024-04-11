@@ -131,10 +131,10 @@ if (idcompra) {
             const template = `
                 <li class="collection-item">
                     <div class="row">
-                        <div class="col s2">
+                        <div class="col s12">
                             <img src="${producto.imagen}" alt="${producto.nombre}" class="responsive-img">
                         </div>
-                        <div class="col s10">
+                        <div class="col s12">
                             <p class="sku">SKU: ${producto.SKU}</p>
                             <p class="nombre">${producto.nombre}</p>
                             <p class="monto">${producto.monto}</p>
