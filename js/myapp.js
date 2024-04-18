@@ -1,26 +1,62 @@
 const $usuario = $("#usuario");
 const $password = $("#password");
 
-/* CREDENCIALES VERDADERAS */
-const credenciales = {
-    usuario: "UCH2024",
+const credenciales = [{
+    usuario: "profesor",
     pass: "123456"
-};
+},
+{
+    usuario: "alumno",
+    pass: "234567"
+}, 
+{
+    usuario: "alumno2",
+    pass: "345678"
+}
+];
 
-$("#login").on("click", function(){
+
+$("#login").on("click", function() {
     const valueUsuario = $usuario.val();
     const valuePassword = $password.val();
-    if (valueUsuario == credenciales.usuario) {
-        if (valuePassword == credenciales.pass) {
-            location.href = "dashboard.html";
-        } else {
-            Swal.fire({
-                title: "ERROR",
-                text: "Contraseña incorrecta",
-                icon: "error"
-            });
+    
+    let usuarioEncontrado = false;
+
+    for (let i = 0; i < credenciales.length; i++) {
+        if (valueUsuario === credenciales[i].usuario) {
+            usuarioEncontrado = true;
+            if (valuePassword === credenciales[i].pass) {
+                localStorage.setItem("tipoUsuario", valueUsuario);
+                let dashboardUrl;
+                if (valueUsuario === "profesor") {
+                    dashboardUrl = "dashboard_profe.html";
+                } else if (valueUsuario === "alumno") {
+                    dashboardUrl = "dashboard_alu.html";
+                } else if (valueUsuario === "alumno2") {
+                    dashboardUrl = "dashboard_alu.html";
+                }
+
+                if (dashboardUrl) {
+                    location.href = dashboardUrl;
+                } else {
+                    Swal.fire({
+                        title: "ERROR",
+                        text: "No se pudo determinar la URL de dashboard",
+                        icon: "error"
+                    });
+                }
+            } else {
+                Swal.fire({
+                    title: "ERROR",
+                    text: "Contraseña incorrecta",
+                    icon: "error"
+                });
+            }
+            break;
         }
-    } else {
+    }
+
+    if (!usuarioEncontrado) {
         Swal.fire({
             title: "ERROR",
             text: "Usuario no encontrado",

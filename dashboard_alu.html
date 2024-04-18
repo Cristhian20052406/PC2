@@ -1,0 +1,62 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+        <meta name="description" content="">
+        <title>Dashboard Alumno</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">        
+    </head>
+    <body class="blue lighten-5">
+          <nav class="blue darken-2" role="navigation">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo">Dashboard Alumno</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.html">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+          </nav>
+    
+      <div class="container">
+          <h3 class="blue-text text-darken-2">Bienvenido, Alumno</h3>
+            <div class="card-content black-text">
+                <span class="card-title">Datos Personales</span>
+                <ul class="collection">
+                    <li class="collection-item"><strong>Nombre:</strong> <span id="nombreAlumno" class="secondary-content"></span></li>
+                    <li class="collection-item"><strong>Apellido:</strong> <span id="apellidoAlumno" class="secondary-content"></span></li>
+                    <li class="collection-item"><strong>Teléfono:</strong> <span id="telefonoAlumno" class="secondary-content"></span></li>
+                    <li class="collection-item"><strong>Dirección:</strong> <span id="direccionAlumno" class="secondary-content"></span></li>
+                </ul>
+            </div>
+  
+          <h4 class="blue-text text-darken-2">Encuesta: Profesor Favorito</h4>
+          <p class="grey-text text-darken-2">Por favor, elige a tu profesor favorito:</p>
+          <form id="encuestaForm">
+              <p>
+                  <label>
+                      <input name="profesorFavorito" type="radio" value="Profesor De La Rosa" class="with-gap" />
+                      <span class="black-text">Profesor: Rogger De La Rosa</span>
+                  </label>
+              </p>
+              <p>
+                  <label>
+                      <input name="profesorFavorito" type="radio" value="Profesor Paraguya" class="with-gap" />
+                      <span class="black-text">Profesor: Julio Paraguya</span>
+                  </label>
+              </p>
+              <p>
+                  <label>
+                      <input name="profesorFavorito" type="radio" value="Profesor Romero Untiveros" class="with-gap" />
+                      <span class="black-text">Profesor: Luis Romero Untiveros</span>
+                  </label>
+              </p>
+              <button class="btn waves-effect waves-light blue darken-2" type="submit">Enviar Encuesta</button>
+          </form>
+      </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/dashboardalu.js"></script>
+</html>
